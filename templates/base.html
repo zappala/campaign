@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Daniel Zappala for Cedar Hills City Council</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/static/css/app.css" rel="stylesheet">
+  </head>
+  <body>
+    {% block header %}
+    <div id="header">
+      <div class="container">
+	Daniel ZAPPALA<br>
+      </div>
+    </div>
+    <div id="subheader">
+      <div class="container">
+	<i>for</i> Cedar Hills City Council
+      </div>
+    </div>
+    {% endblock %}
+    {% block menu %}
+    <div class="navbar">
+      <div class="navbar-inner">
+	<div class="container">
+	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+	  </a>
+	  <div class="nav-collapse collapse">
+	    <ul class="nav nav-pills">
+	      <li id="menu-home" {% if active == "index" %}class="active"{% endif %}><a href={{url_for("index")}}>Home</a></li>
+	      <li id="menu-about" {% if active == "about" %}class="active"{% endif %}><a href={{url_for("show",page="about")}} >About Daniel</a></li>
+	      <ul class="nav">
+		<li id="menu-issues" class="dropdown {% if active == "issues" %}active{% endif %}">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		    Issues
+		    <span class="caret"></span>
+		  </a>
+		  <ul class="dropdown-menu" role="menu">
+		    <li><a tabindex="-1" href={{ url_for("show",page="fiscal")}} >Fiscal Management</a></li>
+		    <li><a tabindex="-1" href={{ url_for("show",page="transparency")}} >Transparency</a></li>
+		    <li><a tabindex="-1" href={{ url_for("show",page="recreation")}} >Recreation</a></li>
+		    <li><a tabindex="-1" href={{ url_for("show",page="planning")}} >Planning</a></li>
+		  </ul>
+		</li>
+	      </ul>
+	      <li id="menu-contribute" {% if active == "donate" %}class="active"{% endif %}><a href="http://www.gofundme.com/vote-zappala">Contribute</a></li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </div>
+    {% endblock %}
+
+    <div id="page">
+      {% block page %}{% endblock %}
+    </div>
+
+    <div id="footer">
+      <div class="banner0">
+	<div class="container">
+	  <div class="row-fluid">
+	    <div class="span12 padtop10">
+	      <p>&copy 2013 Daniel Zappala<br>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+	      </p>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>

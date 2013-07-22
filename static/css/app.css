@@ -198,3 +198,22 @@ a:focus {
     outline: none;
 }
 
+.centering {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.large {
+    font-size: 1.5em;
+    color: black;
+}
+
+a.large {
+    text-decoration: underline;
+}
